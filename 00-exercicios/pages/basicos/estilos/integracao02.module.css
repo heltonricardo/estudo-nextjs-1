@@ -1,0 +1,16 @@
+/* Este estilo ficará disponível somente para o componente */
+
+.vermelha2 {
+  font-size: small;
+  color: #f30;
+}
+
+.verde2 {
+  font-size: medium;
+  color: #4c4;
+}
+
+.azul2 {
+  font-size: large;
+  color: #03a;
+}
