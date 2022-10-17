@@ -1,0 +1,12 @@
+.quadrado {
+    height: 100px;
+    width: 100px;
+}
+
+.branco {
+    background-color: white;
+}
+
+.preto {
+    background-color: black;
+}
