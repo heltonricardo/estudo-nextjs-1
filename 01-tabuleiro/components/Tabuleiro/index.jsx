@@ -12,5 +12,7 @@ function montaTabuleiro(corAtualIsPreto = false) {
 }
 
 export default ({ primeiraCorIsPreto = false }) => (
-  <div className={styles.tabuleiro}>{montaTabuleiro(primeiraCorIsPreto)} </div>
+  <div className={styles.mesa}>
+    <div className={styles.tabuleiro}>{montaTabuleiro(primeiraCorIsPreto)}</div>
+  </div>
 );
