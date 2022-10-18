@@ -3,10 +3,6 @@ import If from "../../components/If";
 const isPar = (n) => n % 2 === 0;
 const isImpar = (n) => n % 2 !== 0;
 
-function a() {
-    a == 
-}
-
 export default () => (
   <>
     {[...Array(10).keys()]
