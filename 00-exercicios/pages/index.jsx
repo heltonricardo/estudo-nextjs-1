@@ -75,6 +75,9 @@ export default function Home() {
           <li>
             <a href="/estado/contador">Estado - Contador</a>
           </li>
+          <li>
+            <a href="/estado/formulario">Componente Controlado</a>
+          </li>
         </ol>
       </main>
     </div>
