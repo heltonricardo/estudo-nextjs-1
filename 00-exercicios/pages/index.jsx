@@ -69,6 +69,9 @@ export default function Home() {
           <li>
             <a href="/comunicacao/indireta01">Comunicação Indireta 01</a>
           </li>
+          <li>
+            <a href="/estado/mouse">Estado - Mouse</a>
+          </li>
         </ol>
       </main>
     </div>
