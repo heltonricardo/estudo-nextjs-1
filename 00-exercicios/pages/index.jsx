@@ -63,6 +63,9 @@ export default function Home() {
           <li>
             <a href="/comunicacao/direta">Comunicação Direta</a>
           </li>
+          <li>
+            <a href="/basicos/botao">Eventos JS</a>
+          </li>
         </ol>
       </main>
     </div>
