@@ -72,6 +72,9 @@ export default function Home() {
           <li>
             <a href="/estado/mouse">Estado - Mouse</a>
           </li>
+          <li>
+            <a href="/estado/contador">Estado - Contador</a>
+          </li>
         </ol>
       </main>
     </div>
