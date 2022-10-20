@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
 import DisplayNumero from "../../../components/DisplayNumero";
+import gerarNumeros from "../../../functions/mega-sena";
 import styles from "./styles.module.scss";
-
-function gerarNumeros(tamanho = 6) {
-  const lista = [];
-  while (lista.length < tamanho) {
-    const r = Math.floor(Math.random() * 60) + 1;
-    if (lista.indexOf(r) === -1) lista.push(r);
-  }
-  return lista.sort((a, b) => a - b);
-}
 
 export default () => {
   const [lista1, setLista1] = useState([]);
