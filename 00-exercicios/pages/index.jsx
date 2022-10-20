@@ -78,6 +78,9 @@ export default function Home() {
           <li>
             <a href="/estado/formulario">Componente Controlado</a>
           </li>
+          <li>
+            <a href="/estado/mega-sena">Mega Sena</a>
+          </li>
         </ol>
       </main>
     </div>

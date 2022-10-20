@@ -1,0 +1,16 @@
+.circulo {
+  $diametro: 60px;
+
+  width: $diametro;
+  height: $diametro;
+  border-radius: $diametro / 2;
+  margin: $diametro * 0.07;
+  background-color: #222;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

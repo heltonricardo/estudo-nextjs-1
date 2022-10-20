@@ -1,0 +1,54 @@
+.pagina,
+.exercicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.exercicio:not(:first-of-type) {
+  margin-top: 100px;
+}
+
+.pagina {
+  height: 100vh;
+}
+
+.titulo,
+.rotulo {
+  font: 20px Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+.resultado {
+  display: flex;
+}
+
+.botao {
+  $cor-primaria: white;
+  $cor-secundaria: #222;
+
+  width: 80px;
+  height: 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  color: $cor-primaria;
+  background-color: $cor-secundaria;
+
+  &:hover:not(&:active) {
+    color: $cor-secundaria;
+    background-color: $cor-primaria;
+    border: 1px solid $cor-secundaria;
+    transition: 0.15s;
+  }
+}
+
+.entrada {
+  width: 50px;
+  margin: 0 10px;
+
+  &:focus {
+    outline: none;
+  }
+}
