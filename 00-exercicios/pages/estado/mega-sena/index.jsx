@@ -17,15 +17,17 @@ export default () => {
     setLista2(gerarNumeros(valor));
   }, [valor]);
 
+  const renderLista1 = () =>
+    lista1.map((e) => <DisplayNumero key={e} valor={e} />);
+
+  const renderLista2 = () =>
+    lista2.map((e) => <DisplayNumero key={e} valor={e} />);
+
   return (
     <div className={styles.pagina}>
       <div className={styles.exercicio}>
         <h1 className={styles.titulo}>Ex1: Gerar 6 números diferentes</h1>
-        <div className={styles.resultado}>
-          {lista1.map((e) => (
-            <DisplayNumero key={e} valor={e} />
-          ))}
-        </div>
+        <div className={styles.resultado}>{renderLista1()}</div>
         <button
           onClick={() => setLista1(gerarNumeros())}
           className={styles.botao}
@@ -34,12 +36,8 @@ export default () => {
         </button>
       </div>
       <div className={styles.exercicio}>
-        <h1 className={styles.titulo}>Ex1: Gerar N números diferentes</h1>
-        <div className={styles.resultado}>
-          {lista2.map((e) => (
-            <DisplayNumero key={e} valor={e} />
-          ))}
-        </div>
+        <h1 className={styles.titulo}>Ex2: Gerar N números diferentes</h1>
+        <div className={styles.resultado}>{renderLista2()}</div>
         <div>
           <span className={styles.rotulo}>N:</span>
           <input
