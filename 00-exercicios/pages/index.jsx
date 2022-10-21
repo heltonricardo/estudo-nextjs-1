@@ -11,7 +11,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <ol style={{ fontSize: "20px" }}>
+        <ol
+          style={{
+            fontSize: "20px",
+            margin: "20px 0 0 40px",
+            listStyle: "circle",
+          }}
+        >
           <li>
             <a href="/basicos/primeiro">Primeiro</a>
           </li>
@@ -80,6 +86,9 @@ export default function Home() {
           </li>
           <li>
             <a href="/estado/mega-sena">Mega Sena</a>
+          </li>
+          <li>
+            <a href="/ts/exemplo">Exemplo TS</a>
           </li>
         </ol>
       </main>
