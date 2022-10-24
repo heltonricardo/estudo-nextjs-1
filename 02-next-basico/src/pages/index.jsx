@@ -1,7 +1,10 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-const lista = [["/rotas/olhe-a-url/é-dinamica", "Rota dinâmica"]];
+const lista = [
+  ["/rotas/olhe-a-url/é-dinamica", "Rota dinâmica"],
+  ["/rotas/params?nome=helton&idade=25", "Usando parâmetros"],
+];
 
 export default () => (
   <div className={styles.container}>
