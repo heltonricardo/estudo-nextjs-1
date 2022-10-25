@@ -14,8 +14,9 @@ export default function Home() {
         <ol
           style={{
             fontSize: "20px",
+            lineHeight: "30px",
             margin: "20px 0 0 40px",
-            listStyle: "circle",
+            listStyle: "number",
           }}
         >
           <li>

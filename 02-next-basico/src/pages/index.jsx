@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import router from "next/router";
 import styles from "../styles/Home.module.css";
 
 const lista = [
@@ -20,15 +21,35 @@ export default () => (
       <ol
         style={{
           fontSize: "20px",
+          lineHeight: "30px",
           margin: "20px 0 0 40px",
-          listStyle: "circle",
+          listStyle: "number",
         }}
       >
-        {lista.map((e, i) => (
+        {lista.map(([url, titulo], i) => (
           <li key={i}>
-            <Link href={e[0]}>{e[1]}</Link>
+            <Link href={url}>{titulo}</Link>
           </li>
         ))}
+        <li>
+          <button
+            onClick={() => router.push("/rotas/programatico?nome=Helton")}
+          >
+            Roteamento programático 1
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() =>
+              router.push({
+                pathname: "/rotas/programatico",
+                query: { id: "13", nome: "Helton" },
+              })
+            }
+          >
+            Roteamento programático 2
+          </button>
+        </li>
       </ol>
     </main>
   </div>
