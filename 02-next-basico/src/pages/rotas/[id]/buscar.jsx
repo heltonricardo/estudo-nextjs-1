@@ -1,12 +1,16 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default () => {
   const router = useRouter();
-  const id = router.query.id
+  const id = router.query.id;
 
   return (
     <div>
-      Rotas {">"} {id} {">"} Buscar
+      <p>
+        Rotas {">"} {id} {">"} Buscar
+      </p>
+      <Link href="/">Voltar</Link>
     </div>
   );
 };

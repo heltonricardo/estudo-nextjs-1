@@ -1,8 +1,10 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 const lista = [
-  ["/rotas/olhe-a-url/é-dinamica", "Rota dinâmica"],
+  ["/rotas/123/buscar", "Rota dinâmica 1"],
+  ["/rotas/olhe-a-url/é-rota-dinamica", "Rota dinâmica 2"],
   ["/rotas/params?nome=helton&idade=25", "Usando parâmetros"],
 ];
 
@@ -24,7 +26,7 @@ export default () => (
       >
         {lista.map((e, i) => (
           <li key={i}>
-            <a href={e[0]}>{e[1]}</a>
+            <Link href={e[0]}>{e[1]}</Link>
           </li>
         ))}
       </ol>
