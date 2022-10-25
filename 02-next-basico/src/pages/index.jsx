@@ -7,6 +7,9 @@ const lista = [
   ["/rotas/123/buscar", "Rota dinâmica 1"],
   ["/rotas/olhe-a-url/é-rota-dinamica", "Rota dinâmica 2"],
   ["/rotas/params?nome=helton&idade=25", "Usando parâmetros"],
+  ["/api/hello", "API padrão do next"],
+  ["/api/metodo", "API teste 1 (usar rest client)"],
+  ["/questao", "API teste 2"],
 ];
 
 export default () => (
