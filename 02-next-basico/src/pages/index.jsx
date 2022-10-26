@@ -13,6 +13,7 @@ const lista = [
   ["/form", "Integração com API"],
   ["/api/params1/é/possivel/passar/n/parâmetros", "API com múltiplos parâmetros"],
   ["/api/params2/", "API com parâmetros opcionais (não recebe 404)"],
+  ["/asd123/", "Alteração da página 404"],
 ];
 
 export default () => (
