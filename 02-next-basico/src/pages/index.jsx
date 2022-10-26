@@ -10,6 +10,7 @@ const lista = [
   ["/api/hello", "API padrão do next"],
   ["/api/metodo", "API teste 1 (usar rest client)"],
   ["/questao", "API teste 2"],
+  ["/form", "Integração com API"],
 ];
 
 export default () => (

@@ -22,7 +22,9 @@ export default () => {
     <div>
       <h1>Questão</h1>
       <div>
-        <span>{questao?.enunciado}</span>
+        <span>
+          {questao?.id}) {questao?.enunciado}
+        </span>
         {renderRespostas()}
       </div>
     </div>
