@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default () => {
+export default function Params() {
   const router = useRouter();
   const nome = router.query.nome;
   const idade = router.query.idade;
@@ -13,4 +13,4 @@ export default () => {
       <Link href="/">Voltar</Link>
     </div>
   );
-};
+}

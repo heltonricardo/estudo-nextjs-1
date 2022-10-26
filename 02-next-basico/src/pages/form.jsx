@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default () => {
+export default function Form() {
   const url = "/api/form";
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
@@ -26,18 +26,11 @@ export default () => {
   return (
     <div>
       <h1>Integração com API</h1>
-      <input
-        type="text"
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-      />
-      <input
-        type="number"
-        value={idade}
-        onChange={(e) => setIdade(e.target.value)}
-      />
+      <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+      <input type="number" value={idade} onChange={(e) => setIdade(e.target.value)} />
       <button onClick={salvarUsuario}>Salvar Usuário</button>
       <ul>{renderizarUsuarios()}</ul>
+      <Link href="/">Voltar</Link>
     </div>
   );
-};
+}

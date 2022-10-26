@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default () => {
+export default function Questao() {
   const [questao, setQuestao] = useState("");
 
   useEffect(() => {
@@ -10,12 +11,7 @@ export default () => {
   }, []);
 
   function renderRespostas() {
-    return (
-      <ul>
-        {questao?.respostas &&
-          questao.respostas.map((e, i) => <li key={i}>{e}</li>)}
-      </ul>
-    );
+    return <ul>{questao?.respostas && questao.respostas.map((e, i) => <li key={i}>{e}</li>)}</ul>;
   }
 
   return (
@@ -26,7 +22,8 @@ export default () => {
           {questao?.id}) {questao?.enunciado}
         </span>
         {renderRespostas()}
+        <Link href="/">Voltar</Link>
       </div>
     </div>
   );
-};
+}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default () => {
+export default function Nome() {
   const router = useRouter();
   const id = router.query.id;
   const nome = router.query.nome;
@@ -13,4 +13,4 @@ export default () => {
       <Link href="/">Voltar</Link>
     </div>
   );
-};
+}

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default () => {
+export default function Programatico() {
   const router = useRouter();
 
   const pathParams = JSON.stringify(router.query)
-    .replace(/(\"|{|})/g, "")
+    .replace(/[\"{}]/g, "")
     .replace(/:/g, ": ")
     .replace(/,/g, ", ");
 
@@ -16,4 +16,4 @@ export default () => {
       <Link href="/">Voltar</Link>
     </div>
   );
-};
+}
