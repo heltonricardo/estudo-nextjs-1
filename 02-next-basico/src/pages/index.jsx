@@ -11,6 +11,8 @@ const lista = [
   ["/api/metodo", "API teste 1 (usar rest client)"],
   ["/questao", "API teste 2"],
   ["/form", "Integração com API"],
+  ["/api/params1/é/possivel/passar/n/parâmetros", "API com múltiplos parâmetros"],
+  ["/api/params2/", "API com parâmetros opcionais (não recebe 404)"],
 ];
 
 export default () => (
@@ -36,11 +38,7 @@ export default () => (
           </li>
         ))}
         <li>
-          <button
-            onClick={() => router.push("/rotas/programatico?nome=Helton")}
-          >
-            Roteamento programático 1
-          </button>
+          <button onClick={() => router.push("/rotas/programatico?nome=Helton")}>Roteamento programático 1</button>
         </li>
         <li>
           <button
