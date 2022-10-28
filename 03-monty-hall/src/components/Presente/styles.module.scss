@@ -1,0 +1,37 @@
+$verde-claro: #7aa944;
+$verde-escuro: #5c7e32;
+$vermelho: red;
+
+.presente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .tampa {
+    width: 100px;
+    height: 25px;
+    background-color: $verde-claro;
+  }
+
+  .corpo {
+    width: 90px;
+    height: 60px;
+    background-color: $verde-escuro;
+  }
+
+  .laco1 {
+    width: 15px;
+    height: 85px;
+    position: absolute;
+    background-color: $vermelho;
+  }
+
+  .laco2 {
+    width: 90px;
+    height: 15px;
+    top: 40px;
+    position: absolute;
+    background-color: $vermelho;
+  }
+}
