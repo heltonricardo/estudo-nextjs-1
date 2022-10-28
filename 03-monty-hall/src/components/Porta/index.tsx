@@ -1,13 +1,18 @@
+import PortaModel from "../../model/PortaModel";
 import styles from "./styles.module.scss";
 
-export default function Porta({ selecionada }) {
-  const selecao = selecionada ? styles.selecao : "";
-  
+interface Props {
+  porta: PortaModel;
+}
+
+export default function Porta({ porta }: Props) {
+  const selecao = porta.isSelecionada ? styles.selecao : "";
+
   return (
     <div className={styles.area}>
       <div className={`${styles.batente} ${selecao}`}>
         <div className={styles.porta}>
-          <div className={styles.numero}>3</div>
+          <div className={styles.numero}>{porta.numero}</div>
           <div className={styles.macaneta}></div>
         </div>
       </div>

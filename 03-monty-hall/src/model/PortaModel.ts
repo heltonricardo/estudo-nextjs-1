@@ -1,10 +1,10 @@
-export default class Porta {
-  #numero;
-  #temPresente;
-  #isSelecionada;
-  #isAberta;
+export default class PortaModel {
+  #numero: number;
+  #temPresente: boolean;
+  #isSelecionada: boolean;
+  #isAberta: boolean;
 
-  constructor(numero, temPresente = false, isSelecionada = false, isAberta = false) {
+  constructor(numero: number, temPresente = false, isSelecionada = false, isAberta = false) {
     this.#numero = numero;
     this.#temPresente = temPresente;
     this.#isSelecionada = isSelecionada;
@@ -29,16 +29,16 @@ export default class Porta {
 
   alternarSelecao() {
     const isSelecionada = !this.isSelecionada;
-    return new Porta(numero, temPresente, isSelecionada, isAberta);
+    return new PortaModel(this.numero, this.temPresente, isSelecionada, this.isAberta);
   }
 
   RemoverSelecao() {
     const isSelecionada = false;
-    return new Porta(numero, temPresente, isSelecionada, isAberta);
+    return new PortaModel(this.numero, this.temPresente, isSelecionada, this.isAberta);
   }
 
   abrir() {
     const isAberta = true;
-    return new Porta(numero, temPresente, isSelecionada, isAberta);
+    return new PortaModel(this.numero, this.temPresente, this.isSelecionada, isAberta);
   }
 }
