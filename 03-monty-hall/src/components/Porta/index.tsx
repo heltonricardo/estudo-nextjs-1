@@ -2,14 +2,15 @@ import PortaModel from "../../model/PortaModel";
 import styles from "./styles.module.scss";
 
 interface Props {
-  porta: PortaModel;
+  value: PortaModel;
+  onChange: (novaPorta: PortaModel) => void;
 }
 
-export default function Porta({ porta }: Props) {
+export default function Porta({ value: porta, onChange: evento }: Props) {
   const selecao = porta.isSelecionada ? styles.selecao : "";
 
   return (
-    <div className={styles.area}>
+    <div className={styles.area} onClick={() => evento(porta.alternarSelecao())}>
       <div className={`${styles.batente} ${selecao}`}>
         <div className={styles.porta}>
           <div className={styles.numero}>{porta.numero}</div>
