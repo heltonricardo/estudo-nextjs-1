@@ -1,0 +1,28 @@
+.oJogo {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .portas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-self: stretch;
+  }
+
+  .botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    & button {
+      color: white;
+      background-color: #c0392c;
+      font-size: 2rem;
+      border: none;
+      padding: 10px 25px;
+    }
+  }
+}
