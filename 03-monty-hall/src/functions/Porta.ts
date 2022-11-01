@@ -9,11 +9,11 @@ export function criarPortas(qnt: number, premiada: number): PortaModel[] {
 }
 
 export function atualizarPortas(portas: PortaModel[], portaModificada: PortaModel): PortaModel[] {
-  return portas.map((portaAtual) => {
-    return portaAtual.numero === portaModificada.numero
+  return portas.map((portaAtual) =>
+    portaAtual.numero === portaModificada.numero
       ? portaModificada
       : portaModificada.isAberta
       ? portaAtual
-      : portaAtual.RemoverSelecao();
-  });
+      : portaAtual.RemoverSelecao()
+  );
 }
