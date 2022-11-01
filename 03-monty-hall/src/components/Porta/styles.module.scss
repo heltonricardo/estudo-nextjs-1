@@ -24,6 +24,7 @@ $largura: 200px;
     border-top: 5px solid $cor-batente;
     border-right: 5px solid $cor-batente;
     border-left: 5px solid $cor-batente;
+    background-color: #0005;
 
     .porta {
       display: flex;
@@ -36,6 +37,7 @@ $largura: 200px;
       .numero {
         font-size: 3rem;
         color: $cor-numero;
+        user-select: none;
         font-family: Arial, Helvetica, sans-serif;
       }
 
