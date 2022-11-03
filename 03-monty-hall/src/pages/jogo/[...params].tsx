@@ -17,7 +17,7 @@ export default function Jogo() {
       const presenteValido = 1 <= +portaPremiada && +portaPremiada <= +qntPortas;
       setIsValido(qtdeValida && presenteValido);
     }
-  }, [portas]);
+  }, [portas, router.query?.params]);
 
   useEffect(() => {
     if (router.query?.params) {
