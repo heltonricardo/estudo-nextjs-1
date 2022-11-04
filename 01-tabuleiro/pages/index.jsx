@@ -1,3 +1,5 @@
 import Tabuleiro from "../components/Tabuleiro";
 
-export default () => <Tabuleiro />;
+export default function Home() {
+  return <Tabuleiro />;
+}

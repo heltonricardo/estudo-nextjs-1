@@ -11,8 +11,10 @@ function montaTabuleiro(corAtualIsPreto = false) {
   return vet;
 }
 
-export default ({ primeiraCorIsPreto = false }) => (
-  <div className={styles.mesa}>
-    <div className={styles.tabuleiro}>{montaTabuleiro(primeiraCorIsPreto)}</div>
-  </div>
-);
+export default function Tabuleiro({ primeiraCorIsPreto = false }) {
+  return (
+    <div className={styles.mesa}>
+      <div className={styles.tabuleiro}>{montaTabuleiro(primeiraCorIsPreto)}</div>
+    </div>
+  );
+}

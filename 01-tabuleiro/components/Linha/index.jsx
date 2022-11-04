@@ -11,6 +11,6 @@ function montaLinha(corAtualIsPreto = false) {
   return vet;
 }
 
-export default ({ comecaComPreto = false }) => (
-  <div className={styles.linha}>{montaLinha(comecaComPreto)} </div>
-);
+export default function Linha({ comecaComPreto = false }) {
+  return <div className={styles.linha}>{montaLinha(comecaComPreto)} </div>;
+}
