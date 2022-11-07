@@ -10,7 +10,7 @@ export function getStaticProps() {
   };
 }
 
-export default function Estatica01(props: Props) {
+export default function Estatica02(props: Props) {
   return (
     <div>
       <h1>Estática #02</h1>
@@ -18,3 +18,8 @@ export default function Estatica01(props: Props) {
     </div>
   );
 }
+
+/* O valor carregado na props será gerado em momento de compilação. Toda
+ * requisição receberá a mesma página (só é possível notar isso em modo de
+ * produção - npm run build / npm start).
+ */
