@@ -12,10 +12,10 @@ interface Props {
   numero: number;
 }
 
-export default function Dinamico01(props: Props) {
+export default function Dinamica01(props: Props) {
   return (
     <div>
-      <h1>Dinâmico #01</h1>
+      <h1>Dinâmica #01</h1>
       <h2>{props.numero}</h2>
     </div>
   );
