@@ -1,4 +1,4 @@
-import { Produto } from "./api/produtos";
+import Produto from "../interfaces/Produto";
 
 export async function getStaticProps() {
   console.log("[SERVER] Executa somente no servidor. Essa mensagem aparece no terminal.");

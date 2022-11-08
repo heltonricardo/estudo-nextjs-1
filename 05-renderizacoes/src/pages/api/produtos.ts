@@ -1,10 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-export interface Produto {
-  id: number;
-  nome: string;
-  preco: number;
-}
+import Produto from "../../interfaces/Produto";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Produto[]>) {
   res.status(200).json([
