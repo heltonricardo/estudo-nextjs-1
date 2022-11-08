@@ -44,7 +44,11 @@ export function getStaticPaths() {
  * método, com nome getStaticPaths.
  *
  * O atributo paths é um array que representa os parâmetros das páginas que
- * serão geradas. O atrobuto fallback aceita um valor booleano: false - ao
+ * serão geradas. O atrobuto fallback aceita um valor booleano: false -> ao
  * tentar acessar uma página que não foi gerada, o cliente receberá a página de
- * erro 404.
+ * erro 404. true -> uma vez que a página não esteja na lista pré-gerada,
+ * haverá uma chamada para a função getStaticProps que poderá ou não retornar um
+ * aluno (o que deve ser tratado no componente). Uma vez que essa página seja
+ * carregada uma vez, ela ficará disponível de forma estática para as próximas
+ * requisições.
  */
