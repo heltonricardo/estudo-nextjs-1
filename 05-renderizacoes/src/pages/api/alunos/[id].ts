@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import Aluno from "../../../interfaces/Aluno";
+import Aluno from "../../../interfaces/IAluno";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Aluno>) {
   const idReq = Number(req.query.id) || 0;

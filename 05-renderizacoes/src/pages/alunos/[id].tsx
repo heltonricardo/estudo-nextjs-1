@@ -1,13 +1,27 @@
-export default function Id() {
+import IAluno from "../../interfaces/IAluno";
+
+interface Props {
+  aluno: IAluno;
+}
+
+export default function Id({ aluno }: Props) {
   return (
     <div>
       <h1>Detalhes do Aluno</h1>
+      <ul>
+        <li>Id: {aluno.id}</li>
+        <li>Nome: {aluno.nome}</li>
+        <li>E-mail: {aluno.email}</li>
+      </ul>
     </div>
   );
 }
 
-export function getStaticProps() {
-  return { props: {} };
+export async function getStaticProps(context: { params: { id: number } }) {
+  const url = `http://localhost:3000/api/alunos/${context.params.id}`;
+  const resp = await fetch(url);
+  const aluno = await resp.json();
+  return { props: { aluno } };
 }
 
 export function getStaticPaths() {
