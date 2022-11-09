@@ -8,11 +8,13 @@ export default function Id({ aluno }: Props) {
   return (
     <div>
       <h1>Detalhes do Aluno</h1>
-      <ul>
-        <li>Id: {aluno.id}</li>
-        <li>Nome: {aluno.nome}</li>
-        <li>E-mail: {aluno.email}</li>
-      </ul>
+      {aluno && (
+        <ul>
+          <li>Id: {aluno.id}</li>
+          <li>Nome: {aluno.nome}</li>
+          <li>E-mail: {aluno.email}</li>
+        </ul>
+      )}
     </div>
   );
 }
@@ -33,7 +35,7 @@ export function getStaticPaths() {
       { params: { id: "4" } },
       { params: { id: "5" } },
     ],
-    fallback: false,
+    fallback: true,
   };
 }
 
