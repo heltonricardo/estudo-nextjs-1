@@ -1,3 +1,5 @@
+import IResposta from "../interfaces/resposta";
+
 export default class RespostaModel {
   #texto: string;
   #isCorreta: boolean;
@@ -27,5 +29,13 @@ export default class RespostaModel {
 
   get isRevelada() {
     return this.#isRevelada;
+  }
+
+  paraObjeto(): IResposta {
+    return {
+      texto: this.texto,
+      isCorreta: this.isCorreta,
+      isRevelada: this.isRevelada,
+    };
   }
 }

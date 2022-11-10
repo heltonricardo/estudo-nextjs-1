@@ -1,3 +1,4 @@
+import IQuestao from "../interfaces/questao";
 import RespostaModel from "./resposta";
 
 export default class QuestaoModel {
@@ -31,5 +32,14 @@ export default class QuestaoModel {
 
   get isRespondida() {
     return this.respostas.some((r) => r.isRevelada);
+  }
+
+  paraObjeto(): IQuestao {
+    return {
+      id: this.id,
+      enunciado: this.enunciado,
+      respostas: this.respostas.map((r) => r.paraObjeto()),
+      isAcertada: this.isAcertada,
+    };
   }
 }
