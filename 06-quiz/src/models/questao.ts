@@ -1,3 +1,4 @@
+import { embaralharVetor } from "../functions/arrays";
 import IQuestao from "../interfaces/questao";
 import RespostaModel from "./resposta";
 
@@ -41,5 +42,10 @@ export default class QuestaoModel {
       respostas: this.respostas.map((r) => r.paraObjeto()),
       isAcertada: this.isAcertada,
     };
+  }
+
+  embaralharRespostas() {
+    const respostasEmbaralhadas = embaralharVetor(this.respostas);
+    return new QuestaoModel(this.id, this.enunciado, respostasEmbaralhadas, this.isAcertada);
   }
 }
