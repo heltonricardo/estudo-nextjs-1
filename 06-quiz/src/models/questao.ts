@@ -6,13 +6,13 @@ export default class QuestaoModel {
   #id: number;
   #enunciado: string;
   #respostas: RespostaModel[];
-  #isAcertada: boolean;
+  #acertada: boolean;
 
-  constructor(id: number, enunciado: string, respostas: RespostaModel[], isAcertada = false) {
+  constructor(id: number, enunciado: string, respostas: RespostaModel[], acertada = false) {
     this.#id = id;
     this.#enunciado = enunciado;
     this.#respostas = respostas;
-    this.#isAcertada = isAcertada;
+    this.#acertada = acertada;
   }
 
   get id() {
@@ -28,7 +28,7 @@ export default class QuestaoModel {
   }
 
   get isAcertada() {
-    return this.#isAcertada;
+    return this.#acertada;
   }
 
   get isRespondida() {
@@ -47,5 +47,15 @@ export default class QuestaoModel {
   embaralharRespostas() {
     const respostasEmbaralhadas = embaralharVetor(this.respostas);
     return new QuestaoModel(this.id, this.enunciado, respostasEmbaralhadas, this.isAcertada);
+  }
+
+  responderCom(indice: number) {
+    const acertou = this.respostas[indice]?.isCorreta;
+    const respostas = this.respostas.map((respAtual, i) => {
+      const respSelecionada = i === indice;
+      const deveRevelar = respSelecionada || respAtual.isCorreta;
+      return deveRevelar ? respAtual.revelar() : respAtual;
+    });
+    return new QuestaoModel(this.id, this.enunciado, respostas, acertou);
   }
 }

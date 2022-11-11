@@ -2,13 +2,13 @@ import IResposta from "../interfaces/resposta";
 
 export default class RespostaModel {
   #texto: string;
-  #isCorreta: boolean;
-  #isRevelada: boolean;
+  #correta: boolean;
+  #revelada: boolean;
 
-  constructor(texto: string, isCorreta: boolean, isRevelada = false) {
+  constructor(texto: string, correta: boolean, revelada = false) {
     this.#texto = texto;
-    this.#isCorreta = isCorreta;
-    this.#isRevelada = isRevelada;
+    this.#correta = correta;
+    this.#revelada = revelada;
   }
 
   static certa(texto: string) {
@@ -24,11 +24,11 @@ export default class RespostaModel {
   }
 
   get isCorreta() {
-    return this.#isCorreta;
+    return this.#correta;
   }
 
   get isRevelada() {
-    return this.#isRevelada;
+    return this.#revelada;
   }
 
   paraObjeto(): IResposta {
@@ -37,5 +37,10 @@ export default class RespostaModel {
       isCorreta: this.isCorreta,
       isRevelada: this.isRevelada,
     };
+  }
+
+  revelar() {
+    const revelar = true;
+    return new RespostaModel(this.texto, this.isCorreta, revelar);
   }
 }
