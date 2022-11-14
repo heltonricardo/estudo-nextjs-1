@@ -53,7 +53,7 @@ export default class QuestaoModel {
     const acertou = this.respostas[indice]?.isCorreta;
     const respostas = this.respostas.map((respAtual, i) => {
       const respSelecionada = i === indice;
-      const deveRevelar = respSelecionada || respAtual.isCorreta;
+      const deveRevelar = respSelecionada; // || respAtual.isCorreta; <- revelar correta também
       return deveRevelar ? respAtual.revelar() : respAtual;
     });
     return new QuestaoModel(this.id, this.enunciado, respostas, acertou);
