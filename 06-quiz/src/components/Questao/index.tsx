@@ -1,4 +1,5 @@
 import QuestaoModel from "../../models/questao";
+import Enunciado from "../Enunciado";
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 export default function Questao({ questao }: Props) {
   return (
     <div className={styles.questao}>
-      <h1>Questao</h1>
+      <Enunciado enunciado={questao.enunciado} />
     </div>
   );
 }

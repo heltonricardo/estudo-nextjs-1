@@ -1,6 +1,7 @@
 import Questao from "../components/Questao";
 import QuestaoModel from "../models/questao";
 import RespostaModel from "../models/resposta";
+import styles from "../styles/styles.module.scss";
 
 export default function Home() {
   const questao = new QuestaoModel(1, "Enunciado", [
@@ -10,5 +11,9 @@ export default function Home() {
     RespostaModel.errada("Errada 3"),
   ]);
 
-  return <Questao questao={questao} />;
+  return (
+    <div className={styles.home}>
+      <Questao questao={questao} />
+    </div>
+  );
 }
