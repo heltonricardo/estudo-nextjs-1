@@ -13,13 +13,28 @@ export default function Resposta({ resposta, indice, letra, corFundo, respostaFo
   return (
     <div className={styles.resposta} onClick={() => respostaFornecida(indice)}>
       <div className={styles.conteudo}>
-        <div className={styles.frente}>
-          <span className={styles.letra} style={{ backgroundColor: corFundo }}>
-            {letra}
-          </span>
-          <span className={styles.texto}>{resposta.texto}</span>
-        </div>
-        <div className={styles.verso}></div>
+        {resposta.isRevelada ? (
+          <div className={styles.verso}>
+            {resposta.isCorreta ? (
+              <div className={styles.certa}>
+                <span className={styles.titulo}>Acertou! 🤩</span>
+                <span className={styles.texto}>{resposta.texto}</span>
+              </div>
+            ) : (
+              <div className={styles.errada}>
+                <span className={styles.titulo}>Errou! 😵‍💫</span>
+                <span className={styles.texto}>{resposta.texto}</span>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className={styles.frente}>
+            <span className={styles.letra} style={{ backgroundColor: corFundo }}>
+              {letra}
+            </span>
+            <span className={styles.texto}>{resposta.texto}</span>
+          </div>
+        )}
       </div>
     </div>
   );

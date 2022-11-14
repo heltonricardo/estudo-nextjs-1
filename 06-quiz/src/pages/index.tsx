@@ -16,7 +16,7 @@ export default function Home() {
 
   function respostaFornecida(indice: number) {
     console.log(indice);
-    setQuestao(questao.responderCom(2));
+    setQuestao(questao.responderCom(indice));
   }
 
   return (
