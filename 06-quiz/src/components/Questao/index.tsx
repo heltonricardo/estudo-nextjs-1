@@ -5,12 +5,27 @@ import styles from "./styles.module.scss";
 
 interface Props {
   questao: QuestaoModel;
+  respostaFornecida: (indice: number) => void;
 }
 
-export default function Questao({ questao }: Props) {
+const letras = [
+  { valor: "A", cor: "#f2c866" },
+  { valor: "B", cor: "#f266ba" },
+  { valor: "C", cor: "#85d4f2" },
+  { valor: "D", cor: "#bce596" },
+];
+
+export default function Questao({ questao, respostaFornecida }: Props) {
   function renderRespostas() {
     return questao.respostas.map((resp, i) => (
-      <Resposta key={i} resposta={resp} indice={i} letra="X" corFundo="#f2c866" />
+      <Resposta
+        key={i}
+        resposta={resp}
+        indice={i}
+        letra={letras[i].valor}
+        corFundo={letras[i].cor}
+        respostaFornecida={respostaFornecida}
+      />
     ));
   }
 

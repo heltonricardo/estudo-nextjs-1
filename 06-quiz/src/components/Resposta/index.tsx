@@ -6,11 +6,12 @@ interface Props {
   indice: number;
   letra: string;
   corFundo: string;
+  respostaFornecida: (indice: number) => void;
 }
 
-export default function Resposta({ resposta, letra, corFundo }: Props) {
+export default function Resposta({ resposta, indice, letra, corFundo, respostaFornecida }: Props) {
   return (
-    <div className={styles.resposta}>
+    <div className={styles.resposta} onClick={() => respostaFornecida(indice)}>
       <div className={styles.conteudo}>
         <div className={styles.frente}>
           <span className={styles.letra} style={{ backgroundColor: corFundo }}>
