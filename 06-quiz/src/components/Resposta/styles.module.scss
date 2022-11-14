@@ -1,21 +1,49 @@
 .resposta {
+  display: flex;
+  height: 100px;
+  margin: 10px 0;
+  width: 80%;
+  min-width: 500px;
+
+  .conteudo {
     display: flex;
+    flex: 1;
+    position: relative;
 
-    .conteudo {
-
-        .frente {
-
-            .letra {
-
-            }
-
-            .texto {
-                
-            }
-        }
-
-        .verso {
-
-        }
+    .frente,
+    .verso {
+      display: flex;
+      position: absolute;
+      height: 100%;
+      width: 100%;
     }
+
+    .frente {
+      align-items: center;
+      color: #000;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 15px;
+
+      .letra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-right: 15px;
+      }
+
+      .texto {
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+    }
+
+    .verso {
+    }
+  }
 }

@@ -8,12 +8,14 @@ interface Props {
   corFundo: string;
 }
 
-export default function Resposta({ resposta, letra }: Props) {
+export default function Resposta({ resposta, letra, corFundo }: Props) {
   return (
     <div className={styles.resposta}>
       <div className={styles.conteudo}>
         <div className={styles.frente}>
-          <span className={styles.letra}>{letra}</span>
+          <span className={styles.letra} style={{ backgroundColor: corFundo }}>
+            {letra}
+          </span>
           <span className={styles.texto}>{resposta.texto}</span>
         </div>
         <div className={styles.verso}></div>
