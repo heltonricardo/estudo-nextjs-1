@@ -18,9 +18,17 @@ export default function Home() {
     setQuestao(questao.responderCom(indice));
   }
 
+  function tempoEsgotado() {
+    console.log("Tempo esgotado :(");
+  }
+
   return (
     <div className={styles.home}>
-      <Questao questao={questao} respostaFornecida={respostaFornecida} />
+      <Questao
+        questao={questao}
+        respostaFornecida={respostaFornecida}
+        tempoEsgotado={tempoEsgotado}
+      />
     </div>
   );
 }
