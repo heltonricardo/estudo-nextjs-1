@@ -1,15 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Questao from "../components/Questao";
+import QuestaoModel from "../models/questao";
+import RespostaModel from "../models/resposta";
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Quiz com Next.js</title>
-        <meta name="description" content="Quiz com Next.js" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-    </div>
-  );
+  const questao = new QuestaoModel(1, "Enunciado", [
+    RespostaModel.certa("Certa"),
+    RespostaModel.errada("Errada 1"),
+    RespostaModel.errada("Errada 2"),
+    RespostaModel.errada("Errada 3"),
+  ]);
+
+  return <Questao questao={questao} />;
 }
