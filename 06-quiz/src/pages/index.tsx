@@ -1,21 +1,15 @@
+import router from "next/router";
 import { useEffect, useState } from "react";
 import Questionario from "../components/Questionario";
 import QuestaoModel from "../models/questao";
-import RespostaModel from "../models/resposta";
-
-const questaoMock = new QuestaoModel(1, "Enunciado", [
-  RespostaModel.certa("Certa"),
-  RespostaModel.errada("Errada 1"),
-  RespostaModel.errada("Errada 2"),
-  RespostaModel.errada("Errada 3"),
-]);
 
 const BASE_URL = "http://localhost:3000/api";
 
 export default function Home() {
-  const [questao, setQuestao] = useState<QuestaoModel>(questaoMock);
+  const [questao, setQuestao] = useState<QuestaoModel>();
   const [idsQuestoes, setIdsQuestoes] = useState<number[]>([]);
   const [qntAcertadas, setQntAcertadas] = useState<number>(0);
+  const [indiceQuestao, setIndiceQuestao] = useState<number>(0);
 
   function carregarIdsQuestoes() {
     fetch(`${BASE_URL}/questionario`)
@@ -27,7 +21,7 @@ export default function Home() {
     const questaoEntidade = await fetch(`${BASE_URL}/questoes/${id}`)
       .then((resp) => resp.json())
       .then(QuestaoModel.paraEntidade);
-    setQuestao(questaoEntidade);
+    questaoEntidade && setQuestao(questaoEntidade);
   }
 
   useEffect(() => {
@@ -35,7 +29,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    idsQuestoes.length && carregarQuestao(idsQuestoes[0]);
+    idsQuestoes.length && carregarQuestao(idsQuestoes[indiceQuestao]);
   }, [idsQuestoes]);
 
   function questaoRespondida(questaoRespondida: QuestaoModel) {
@@ -44,12 +38,37 @@ export default function Home() {
     acertou && setQntAcertadas(qntAcertadas + 1);
   }
 
+  function gerarIdProximaQuestao() {
+    setIndiceQuestao(indiceQuestao + 1);
+  }
+
+  function irParaProximaQuestao() {
+    carregarQuestao(idsQuestoes[indiceQuestao]);
+  }
+
+  function irParaProximoPasso() {
+    gerarIdProximaQuestao();
+    idsQuestoes[indiceQuestao] ? irParaProximaQuestao() : finalizar();
+  }
+
+  function finalizar() {
+    router.push({
+      pathname: "/resultado",
+      query: {
+        total: idsQuestoes.length,
+        acertadas: qntAcertadas,
+      },
+    });
+  }
+
   return (
-    <Questionario
-      questao={questao}
-      isUltimaQuestao
-      questaoRespondida={questaoRespondida}
-      irParaProximoPasso={() => {}}
-    />
+    questao && (
+      <Questionario
+        questao={questao}
+        questaoRespondida={questaoRespondida}
+        irParaProximoPasso={irParaProximoPasso}
+        isUltimaQuestao={!idsQuestoes[indiceQuestao]}
+      />
+    )
   );
 }
