@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Botao from "../components/Botao";
 import Questao from "../components/Questao";
 import QuestaoModel from "../models/questao";
 import RespostaModel from "../models/resposta";
@@ -29,6 +30,7 @@ export default function Home() {
         respostaFornecida={respostaFornecida}
         tempoEsgotado={tempoEsgotado}
       />
+      <Botao href="/resultado">Teste botão</Botao>
     </div>
   );
 }

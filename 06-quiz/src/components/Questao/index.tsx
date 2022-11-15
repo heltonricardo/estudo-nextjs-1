@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 
 interface Props {
   questao: QuestaoModel;
+  tempoParaResponder?: number;
   respostaFornecida: (indice: number) => void;
   tempoEsgotado: () => void;
 }
@@ -17,7 +18,12 @@ const letras = [
   { valor: "D", cor: "#bce596" },
 ];
 
-export default function Questao({ questao, respostaFornecida, tempoEsgotado }: Props) {
+export default function Questao({
+  questao,
+  tempoParaResponder,
+  respostaFornecida,
+  tempoEsgotado,
+}: Props) {
   function renderRespostas() {
     return questao.respostas.map((resp, i) => (
       <Resposta
@@ -34,7 +40,7 @@ export default function Questao({ questao, respostaFornecida, tempoEsgotado }: P
   return (
     <div className={styles.questao}>
       <Enunciado enunciado={questao.enunciado} />
-      <Temporizador duracao={10} tempoEsgotado={tempoEsgotado} />
+      <Temporizador duracao={tempoParaResponder || 10} tempoEsgotado={tempoEsgotado} />
       {renderRespostas()}
     </div>
   );
