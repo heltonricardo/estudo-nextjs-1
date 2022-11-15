@@ -24,6 +24,8 @@ export default function Home() {
 
   async function carregarQuestao(id: number) {
     const questaoJson = await fetch(`${BASE_URL}/questoes/${id}`).then((resp) => resp.json());
+    const questaoEntidade = QuestaoModel.paraEntidade(questaoJson);
+    setQuestao(questaoEntidade);
   }
 
   useEffect(() => {

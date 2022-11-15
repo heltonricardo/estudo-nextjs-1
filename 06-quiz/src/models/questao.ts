@@ -8,6 +8,14 @@ export default class QuestaoModel {
   #respostas: RespostaModel[];
   #acertada: boolean;
 
+  static paraEntidade(objetoJson: IQuestao) {
+    const id = objetoJson.id;
+    const enunciado = objetoJson.enunciado;
+    const respostas = objetoJson.respostas.map(RespostaModel.paraEntidade);
+    const acertada = objetoJson.isAcertada;
+    return new QuestaoModel(id, enunciado, respostas, acertada);
+  }
+
   constructor(id: number, enunciado: string, respostas: RespostaModel[], acertada = false) {
     this.#id = id;
     this.#enunciado = enunciado;

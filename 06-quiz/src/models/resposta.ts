@@ -11,6 +11,13 @@ export default class RespostaModel {
     this.#revelada = revelada;
   }
 
+  static paraEntidade(objetoJson: IResposta) {
+    const texto = objetoJson.texto;
+    const correta = objetoJson.isCorreta;
+    const revelada = objetoJson.isRevelada;
+    return new RespostaModel(texto, correta, revelada);
+  }
+
   static certa(texto: string) {
     return new RespostaModel(texto, true);
   }
