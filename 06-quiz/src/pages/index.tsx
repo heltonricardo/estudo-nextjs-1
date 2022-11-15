@@ -15,6 +15,7 @@ const BASE_URL = "http://localhost:3000/api";
 export default function Home() {
   const [questao, setQuestao] = useState<QuestaoModel>(questaoMock);
   const [idsQuestoes, setIdsQuestoes] = useState<number[]>([]);
+  const [qntAcertadas, setQntAcertadas] = useState<number>(0);
 
   function carregarIdsQuestoes() {
     fetch(`${BASE_URL}/questionario`)
@@ -23,8 +24,9 @@ export default function Home() {
   }
 
   async function carregarQuestao(id: number) {
-    const questaoJson = await fetch(`${BASE_URL}/questoes/${id}`).then((resp) => resp.json());
-    const questaoEntidade = QuestaoModel.paraEntidade(questaoJson);
+    const questaoEntidade = await fetch(`${BASE_URL}/questoes/${id}`)
+      .then((resp) => resp.json())
+      .then(QuestaoModel.paraEntidade);
     setQuestao(questaoEntidade);
   }
 
@@ -36,7 +38,11 @@ export default function Home() {
     idsQuestoes.length && carregarQuestao(idsQuestoes[0]);
   }, [idsQuestoes]);
 
-  function questaoRespondida(questao: QuestaoModel) {}
+  function questaoRespondida(questaoRespondida: QuestaoModel) {
+    setQuestao(questaoRespondida);
+    const acertou = questaoRespondida.isAcertada;
+    acertou && setQntAcertadas(qntAcertadas + 1);
+  }
 
   return (
     <Questionario
