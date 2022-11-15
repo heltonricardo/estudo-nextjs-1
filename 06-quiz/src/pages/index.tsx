@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Botao from "../components/Botao";
 import Questao from "../components/Questao";
+import Questionario from "../components/Questionario";
 import QuestaoModel from "../models/questao";
 import RespostaModel from "../models/resposta";
 import styles from "../styles/styles.module.scss";
@@ -15,22 +16,16 @@ const questaoMock = new QuestaoModel(1, "Enunciado", [
 export default function Home() {
   const [questao, setQuestao] = useState(questaoMock);
 
-  function respostaFornecida(indice: number) {
-    setQuestao(questao.responderCom(indice));
-  }
-
-  function tempoEsgotado() {
-    console.log("Tempo esgotado :(");
-  }
+  function questaoRespondida(questao: QuestaoModel) {}
 
   return (
     <div className={styles.home}>
-      <Questao
+      <Questionario
         questao={questao}
-        respostaFornecida={respostaFornecida}
-        tempoEsgotado={tempoEsgotado}
+        isUltimaQuestao
+        questaoRespondida={questaoRespondida}
+        irParaProximoPasso={() => {}}
       />
-      <Botao href="/resultado">Teste botão</Botao>
     </div>
   );
 }

@@ -35,6 +35,10 @@ export default class QuestaoModel {
     return this.respostas.some((r) => r.isRevelada);
   }
 
+  get isNaoRespondida() {
+    return !this.isRespondida;
+  }
+
   paraObjeto(): IQuestao {
     return {
       id: this.id,

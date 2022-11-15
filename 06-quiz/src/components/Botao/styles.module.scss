@@ -7,4 +7,10 @@
   border: none;
   padding: 10px 25px;
   margin-top: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
