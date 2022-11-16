@@ -1,6 +1,5 @@
 import router from "next/router";
 import { useEffect, useState } from "react";
-import { convertCompilerOptionsFromJson } from "typescript";
 import Questionario from "../components/Questionario";
 import QuestaoModel from "../models/questao";
 
@@ -62,7 +61,7 @@ export default function Home() {
         questao={questao}
         questaoRespondida={questaoRespondida}
         irParaProximoPasso={() => setIndiceQuestao(indiceQuestao + 1)}
-        isUltimaQuestao={!idsQuestoes[indiceQuestao]}
+        isUltimaQuestao={!idsQuestoes[indiceQuestao + 1]}
       />
     )
   );
