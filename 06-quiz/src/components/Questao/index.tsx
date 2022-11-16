@@ -40,7 +40,11 @@ export default function Questao({
   return (
     <div className={styles.questao}>
       <Enunciado enunciado={questao.enunciado} />
-      <Temporizador duracao={tempoParaResponder || 10} tempoEsgotado={tempoEsgotado} />
+      <Temporizador
+        key={questao.id}
+        duracao={tempoParaResponder || 10}
+        tempoEsgotado={tempoEsgotado}
+      />
       {renderRespostas()}
     </div>
   );
