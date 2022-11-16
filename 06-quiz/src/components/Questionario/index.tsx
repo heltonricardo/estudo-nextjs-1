@@ -21,7 +21,7 @@ export default function Questionario(props: Props) {
     <div className={styles.questionario}>
       {props.questao && (
         <Questao
-          tempoParaResponder={4}
+          tempoParaResponder={10}
           questao={props.questao}
           respostaFornecida={respostaFornecida}
           tempoEsgotado={props.irParaProximoPasso}
