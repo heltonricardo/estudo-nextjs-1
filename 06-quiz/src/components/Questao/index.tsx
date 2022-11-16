@@ -27,7 +27,7 @@ export default function Questao({
   function renderRespostas() {
     return questao.respostas.map((resp, i) => (
       <Resposta
-        key={i}
+        key={`${questao.id}-${i}`}
         resposta={resp}
         indice={i}
         letra={letras[i].valor}
