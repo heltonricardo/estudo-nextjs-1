@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import BASE_URL from "../constants/envs";
 
 export default function Questao() {
   const [questao, setQuestao] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/questao/1")
+    fetch(`${BASE_URL}/api/questao/1`)
       .then((res) => res.json())
       .then(setQuestao);
   }, []);
