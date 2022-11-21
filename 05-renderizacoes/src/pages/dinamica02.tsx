@@ -1,9 +1,10 @@
+import BASE_URL from "../constants/envs";
 import Produto from "../interfaces/Produto";
 
 export async function getServerSideProps() {
   console.log("[SERVER] Executa somente no servidor. Essa mensagem aparece no terminal.");
 
-  const res = await fetch("http://localhost:3000/api/produtos");
+  const res = await fetch(`${BASE_URL}/api/produtos`);
   const produtos = await res.json();
   return {
     props: { produtos },

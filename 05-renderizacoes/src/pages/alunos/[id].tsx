@@ -1,3 +1,4 @@
+import BASE_URL from "../../constants/envs";
 import IAluno from "../../interfaces/IAluno";
 
 interface Props {
@@ -20,7 +21,7 @@ export default function Id({ aluno }: Props) {
 }
 
 export async function getStaticProps(context: { params: { id: number } }) {
-  const url = `http://localhost:3000/api/alunos/${context.params.id}`;
+  const url = `${BASE_URL}/api/alunos/${context.params.id}`;
   const resp = await fetch(url);
   const aluno = await resp.json();
   return { props: { aluno } };
