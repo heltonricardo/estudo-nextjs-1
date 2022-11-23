@@ -1,4 +1,4 @@
-export default ({ children }) => (
+const Lista = ({ children }) => (
   <>
     <h1>Lista de Coisas</h1>
     <ul
@@ -11,3 +11,5 @@ export default ({ children }) => (
     </ul>
   </>
 );
+
+export default Lista;

@@ -6,4 +6,6 @@ const geraLista = (qnt = 10) => {
   return lista;
 };
 
-export default () => <div>{geraLista()}</div>;
+export default function Lista01() {
+  return <div>{geraLista()}</div>;
+}

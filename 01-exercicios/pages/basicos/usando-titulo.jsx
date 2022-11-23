@@ -1,6 +1,6 @@
 import Titulo from "../../components/Titulo";
 
-export default () => {
+export default function UsandoTitulo() {
   return (
     <>
       <Titulo principal="T1" descricao="S1" />
@@ -8,4 +8,4 @@ export default () => {
       <Titulo principal="T3" descricao="S3" />
     </>
   );
-};
+}

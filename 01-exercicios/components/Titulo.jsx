@@ -1,4 +1,4 @@
-export default ({ principal, descricao }) => {
+const Titulo = ({ principal, descricao }) => {
   return (
     <>
       <h1>{principal}</h1>
@@ -6,3 +6,5 @@ export default ({ principal, descricao }) => {
     </>
   );
 };
+
+export default Titulo;

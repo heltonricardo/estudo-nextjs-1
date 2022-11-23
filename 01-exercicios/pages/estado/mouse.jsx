@@ -11,7 +11,7 @@ const estilo = {
   height: "100vh",
 };
 
-export default () => {
+export default function Mouse() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
@@ -26,4 +26,4 @@ export default () => {
       <span>Eixo Y: {y}</span>
     </div>
   );
-};
+}

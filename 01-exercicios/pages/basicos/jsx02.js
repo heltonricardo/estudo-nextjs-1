@@ -1,11 +1,11 @@
-export default () => {
+export default function Jxs02() {
   const itens = [
-    <li>#01</li>,
-    <li>#02</li>,
-    <li>#03</li>,
-    <li>#04</li>,
-    <li>#05</li>,
+    <li key={1}>#01</li>,
+    <li key={2}>#02</li>,
+    <li key={3}>#03</li>,
+    <li key={4}>#04</li>,
+    <li key={5}>#05</li>,
   ];
 
   return <ul>{itens}</ul>;
-};
+}

@@ -1,1 +1,3 @@
-export default ({ condicao, children }) => condicao && children;
+const If = ({ condicao, children }) => condicao && children;
+
+export default If;

@@ -1,6 +1,6 @@
 // Importado em _app.js
 
-export default () => {
+export default function Integracao01() {
   return (
     <>
       <div className="vermelha">Texto #01</div>
@@ -8,4 +8,4 @@ export default () => {
       <div className="azul">Texto #03</div>
     </>
   );
-};
+}

@@ -1,6 +1,6 @@
 import styles from "./integracao02.module.css";
 
-export default () => {
+export default function Integracao02() {
   return (
     <>
       <div className={styles.vermelha2}>Texto #01</div>
@@ -8,4 +8,4 @@ export default () => {
       <div className={styles.azul2}>Texto #03</div>
     </>
   );
-};
+}

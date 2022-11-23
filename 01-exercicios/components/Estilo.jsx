@@ -1,4 +1,4 @@
-export default (props) => {
+const Estilo = (props) => {
   return (
     <div>
       <h1
@@ -13,4 +13,6 @@ export default (props) => {
       <h2 className={props.numero >= 0 ? "azul" : "vermelho"}>Texto #02</h2>
     </div>
   );
-}
+};
+
+export default Estilo;

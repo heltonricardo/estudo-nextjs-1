@@ -1,4 +1,4 @@
-export default ({ funcao }) => (
+const Filho = ({ funcao }) => (
   <>
     <p>* Saídas no console do navegador *</p>
     <h1>Filho</h1>
@@ -8,3 +8,5 @@ export default ({ funcao }) => (
     <button onClick={() => funcao("Olá, pai!")}>Falar com pai v4</button>
   </>
 );
+
+export default Filho;

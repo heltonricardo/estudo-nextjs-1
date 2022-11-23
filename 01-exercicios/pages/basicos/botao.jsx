@@ -1,7 +1,7 @@
 const acao1 = () => console.log("acao1");
 const acao5 = (evento) => console.log(evento);
 
-export default () => {
+export default function Botao() {
   const acao2 = () => console.log("acao2");
   return (
     <>
@@ -30,11 +30,8 @@ export default () => {
         Click #05 v2
       </button>
       <div>
-        <input
-          type="text"
-          onChange={(e) => console.log(e.target.value || "VAZIO")}
-        />
+        <input type="text" onChange={(e) => console.log(e.target.value || "VAZIO")} />
       </div>
     </>
   );
-};
+}

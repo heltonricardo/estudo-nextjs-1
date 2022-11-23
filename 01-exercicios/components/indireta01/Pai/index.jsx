@@ -5,8 +5,10 @@ function falarComPai(evento) {
   console.log("Falou com o pai!");
 }
 
-export default () => (
+const Pai = () => (
   <>
     <Filho funcao={falarComPai} />
   </>
 );
+
+export default Pai;
