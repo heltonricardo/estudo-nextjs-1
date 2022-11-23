@@ -1,3 +1,3 @@
-# Estudo Next.js :: 01-Exercicios
+# Estudo Next.js 1 :: 01-exercicios
 
-Deploy: https://estudo-nextjs-01-exercicios.vercel.app/
+Deploy: https://estudo-nextjs-1-01-exercicios.vercel.app/
